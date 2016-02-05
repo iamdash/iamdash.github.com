@@ -1,3 +1,12 @@
+/nbproject/private/
+.idea/scopes/scope_settings.xml
+
+.idea/vcs.xml
+/nbproject/private/
+lib/config.php
+_site
+.sass-cache
+.jekyll-metadata
 .sass-cache/*
 .DS_Store
 cache/*
