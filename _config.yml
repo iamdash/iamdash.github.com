@@ -1,105 +1,76 @@
-# Site settings
-title:       iamdash
-email:       me@iamdash.com
-author:      Dave Ashman
-description: "Home page of Dave Ashman. Web developer living in the lovely British North West."
-baseurl:     ""
-url:         "http://www.iamdash.com"
-date_format: "%b %-d, %Y"
+# Site wide configuration
 
-# Google services
-google_analytics: "UA-318641-1"
-google_verification:
-
-# Optional features
-animated:             true
-show_related_posts:   false
-show_post_footers:    false
-show_social_icons:    true
-ajaxify_contact_form: false
-enable_mathjax: false
-
-# Disqus post comments
-# (leave blank to disable Disqus)
-disqus_shortname:
-
-# Facebook Comments plugin
-# (leave blank to disable Facebook Comments, otherwise set it to true)
-facebook_comments:
-facebook_appid:
-facebook_comments_number: 10
-
-# Social icons
-github_username:    "iamdash"
-bitbucket_username:
-stackoverflow_id:   "102086"
-twitter_username:   "_iamdash"
-skype_username:
-steam_nickname:
-google_plus_id:
-linkedin_username:
-angellist_username:
-medium_id:
-bitcoin_url:
-paypal_url:
-flattr_button:
-
-# Post sharing icons
-show_sharing_icons: false
-# Change to 'true' to enable individual icons
-share_facebook: false
-share_twitter: true
-share_googleplus: false
-share_linkedin: false
-share_digg: false
-share_tumblr: false
-share_reddit: false
-share_stumbleupon: false
-share_hackernews: false
-
-text:
-  pagination:
-    newer: 'Newer'
-    older: 'Older'
-  share_buttons:
-    text:         'Share this post!'
-    facebook:     'Share on Facebook'
-    twitter:      'Share on Twitter'
-    googleplus:   'Share on Google+'
-    linkedin:     'Share on LinkedIn'
-    digg:         'Share on Digg'
-    tumblr:       'Share on Tumblr'
-    reddit:       'Share on Reddit'
-    stumbleupon:  'Share on StumbleUpon'
-    hackernews:   'Share on Hacker News'
-  post:
-    updated:        'Updated'
-    minute_read:    'minute read'
-    related_posts:  'Related Posts'
-  index:
-    coming_soon: 'Coming soon...'
-  contact:
-    email:    'Email Address'
-    content:  'What would you like to say?'
-    subject:  'New submission!'
-    submit:   'Say Hello'
-    ajax:
-      sending:  'sending..'
-      sent:     'Message sent!'
-      error:    'Error!'
-  thanks: 'Thanks for contacting us. We will reply as soon as possible.'
+title:            Site Title
+locale:           en_US
+url:
 
 
-# Build settings
-markdown:     kramdown
-redcarpet:
-  extensions: ['smart', 'tables', 'with_toc_data']
-permalink:    pretty
-paginate:     1
+# Jekyll configuration
+
+permalink:   /:categories/:title/
+markdown:    kramdown
+highlighter: rouge
 sass:
-  compressed: true
+  sass_dir: _sass
+  style: compressed
 gems:
-  - jekyll-paginate
   - jekyll-sitemap
-# https://github.com/jekyll/jekyll/issues/2938
-exclude: [vendor]
+  - jekyll-gist
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
+
+
+# Octopress
+
+# Default extensions
+post_ext: md
+page_ext: md
+
+# Found in _templates/
+post_layout: post
+page_layout: page
+
+# Format titles with titlecase?
+titlecase: true
+
+
+# Site owner
+owner:
+  name: iamdash
+  avatar: bio-photo.jpeg
+  bio: "Describe your self."
+  email:
+  disqus-shortname:
+  twitter: #username
+  facebook: #username
+  google:
+    plus: #username
+    analytics:
+    verify:
+    ad-client:
+    ad-slot:
+  bing-verify:
+  github: #username
+  stackoverflow: #123456/username   from a "http://stackoverflow.com/users/123456/username" link
+  linkedin: #username
+  xing: #username
+  instagram: #username
+  lastfm: #username
+  tumblr: #username
+  pinterest: #username
+  foursquare: #username
+  steam: #username
+  dribbble: #username
+  youtube: #username
+  soundcloud: #username
+  weibo: #username
+  flickr: #username
+  codepen: #username
+
+include: [".htaccess"]
+exclude: ["lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
