@@ -1,2 +1,1 @@
-RewriteEngine On
-RewriteRule ^$ /app [L]
+
