@@ -7,10 +7,14 @@ $white:#fff;
 $green:#749162;
 $darkGreen:#668155;
 $black:#000;
+$darkGrey:#2D2D2D;
+$lightGrey: rgba(59,59,59, 0.75);
 
 $mainFont:'Roboto', sans-serif;
 $headerFont:'Roboto Condensed', sans-serif;
 $slabFont:'Roboto Slab', serif;
+$bodyFont: 'Lato', sans-serif;
+
 
 // mixins
 @mixin v-p($name, $argument) {
@@ -22,25 +26,6 @@ $slabFont:'Roboto Slab', serif;
   #{$name}:$argument;
 }
 
-/*Mobile Portrait*/
-@media screen and (min-width:320px) {
-}
-
-/*Mobile Landscape*/
-@media screen and (min-width:480px) {
-}
-
-/*Tablet Portrait*/
-@media screen and (min-width:768px) {
-}
-
-/*Tablet Landscape*/
-@media screen and (min-width:992px) {
-}
-
-/*Desktop*/
-@media screen and (min-width:1382px) {
-}
 
 *
 {
@@ -50,15 +35,15 @@ $slabFont:'Roboto Slab', serif;
 
 body
 {
-  background:$green;
-  font-family:$mainFont;
+  background:$darkGrey;
+  font-family:$bodyFont;
   color:$cream;
-
+  line-height:1;
 }
 
 .wrapper{
   margin:30px auto;
-  max-width:700px;
+  max-width:500px;
   padding-bottom:100px;
 }
 
@@ -67,10 +52,18 @@ body
   margin-bottom:40px;
 }
 
+.column{
+  &.sixteen{
+    border-bottom:1px dotted $cream;
+    padding-bottom:40px!important;
+    margin-bottom:30px;
+  }
+}
+
 .avatar
 {
   background:$cream;
-  border-radius:50%;
+  //border-radius:50%;
   height:100px;
   margin:10px auto;
   padding:2px;
@@ -78,59 +71,56 @@ body
 }
 
 h1,
+h2,
 h3
 {
-  color:$white;
-  font-family:$headerFont;
-  font-size:40px;
-  letter-spacing:-1px;
-  text-transform:uppercase;
+  color:$cream;
+  font-size:30px;
+  line-height:1;
 }
 
 h1{
-  margin-bottom:0;
+  font-family:$headerFont;
+  letter-spacing:-1px;
+  margin-bottom:20px;
+}
+
+h2{
+  font-size:16px;
+  margin-bottom:5px;
 }
 
 h3
 {
-  letter-spacing:0;
+  font-size:16px;
+  margin-bottom:3px;
 }
 
-b{
-  //font-family:$headerFont;
-  text-transform:uppercase;
-}
-
-.note{
-  font-size:12px;
-  border-bottom: 1px solid $darkGreen;
-  border-top: 1px solid $darkGreen;
-  padding:15px 10px;
-
-  &:last-child{
-    border-bottom:none;
-    padding-bottom:0;
-  }
-}
-
-.strap{
+h2, h3{
   color:$white;
-  font-family:$slabFont;
-}
+  font-weight:normal;
+  line-height:1.5;
 
-.work-title
-{
-  font-size:1em;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:.05em;
 }
 
 p
 {
-  line-height:1.5;
+  line-height:1.8;
   margin-bottom:20px;
+  text-align:justify;
   @include v-p(hyphens, auto);
+
+  &.strap{
+    color:$white;
+    font-size:16px;
+    line-height:1.2em;
+    text-align:center;
+
+    a{
+      text-decoration:none;
+    }
+
+  }
 
 }
 
@@ -141,10 +131,10 @@ i{
 a
 {
   display:inline-block;
-  background:$darkGreen;
+  background:$lightGrey;
   color:$white;
-  padding:0 3px;
-  text-decoration:none;
+  padding:3px;
+  text-decoration:underline;
   word-wrap: break-word;
   @include v-p(hyphens, auto);
 
@@ -163,54 +153,62 @@ a
 
 }
 
-.ui
-{
-  .divider
-  {
-    color:$white;
-    font-family:$slabFont;
+/*Mobile Portrait*/
+@media screen and (min-width:320px) {
 
-    &:before,
-    &:after
-    {
 
-    }
-    &.sub-header{
-      font-size:10px;
-      font-style:italic;
-    }
-  }
-  .icon
-  {
-    color:$white;
+
+}
+
+/*Mobile Landscape*/
+@media screen and (min-width:480px) {
+
+  h1{
+    font-size:40px;
+    margin-bottom:20px;
   }
 
-  .project-name
+  p
+  {
+    line-height:1.8;
+    margin-bottom:20px;
+    text-align:justify;
+    @include v-p(hyphens, auto);
+
+    &.strap{
+      color:$white;
+      font-size:20px;
+      line-height:1.2em;
+      text-align:center;
+    }
+
+  }
+
+}
+
+/*Tablet Portrait*/
+@media screen and (min-width:768px) {
+
+  h1{
+    font-size:100px;
+    margin-bottom:20px;
+  }
+  h2{
+    font-size:20px;
+  }
+
+  h3
   {
     font-size:16px;
-    margin-bottom:0;
-  }
-  .work-meta
-  {
-    display:block;
-    font-size:12px;
-    text-transform:none;
-    dt, dd
-    {
-      display:inline-block;
-      line-height:14px;
-    }
-    dd
-    {
-      font-weight:bold;
-    }
-
   }
 
 }
 
-@media screen and (min-width:320px) {
+/*Tablet Landscape*/
+@media screen and (min-width:992px) {
 }
 
-@media screen and (min-width:768px) {
+/*Desktop*/
+@media screen and (min-width:1382px) {
 }
+

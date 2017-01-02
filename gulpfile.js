@@ -7,18 +7,18 @@ var concat      = require('gulp-concat');
 gulp.task('serve', ['sass'], function () {
 
     browserSync.init({
-        server: "./app"
+        server: "./"
     });
 
-    gulp.watch("app/scss/*.scss", ['sass']);
-    gulp.watch("app/*.html").on('change', browserSync.reload);
+    gulp.watch("./scss/*.scss", ['sass']);
+    gulp.watch("./*.html").on('change', browserSync.reload);
 });
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function () {
-    return gulp.src("app/scss/*.scss")
+    return gulp.src("./scss/*.scss")
         .pipe(sass({ style: 'compressed' }))
-        .pipe(gulp.dest("app/css"))
+        .pipe(gulp.dest("./css"))
         .pipe(browserSync.stream());
 });
 
