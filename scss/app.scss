@@ -50,6 +50,11 @@ body
 .header{
   text-align:center;
   margin-bottom:40px;
+
+  p{
+    text-align:center;
+  }
+
 }
 
 .column{
@@ -57,6 +62,15 @@ body
     border-bottom:1px dotted $cream;
     padding-bottom:40px!important;
     margin-bottom:30px;
+
+    &:last-child{
+      border-bottom:none;
+
+      p{
+
+        text-align:center;
+      }
+    }
   }
 }
 
@@ -107,8 +121,9 @@ p
 {
   line-height:1.8;
   margin-bottom:20px;
-  text-align:justify;
-  @include v-p(hyphens, auto);
+  //padding:0 20px;
+  //text-align:justify;
+  //@include v-p(hyphens, auto);
 
   &.strap{
     color:$white;
@@ -173,7 +188,7 @@ a
     line-height:1.8;
     margin-bottom:20px;
     text-align:justify;
-    @include v-p(hyphens, auto);
+    //@include v-p(hyphens, auto);
 
     &.strap{
       color:$white;

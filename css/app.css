@@ -16,11 +16,17 @@ body {
 .header {
   text-align: center;
   margin-bottom: 40px; }
+  .header p {
+    text-align: center; }
 
 .column.sixteen {
   border-bottom: 1px dotted #d6dcb5;
   padding-bottom: 40px !important;
   margin-bottom: 30px; }
+  .column.sixteen:last-child {
+    border-bottom: none; }
+    .column.sixteen:last-child p {
+      text-align: center; }
 
 .avatar {
   background: #d6dcb5;
@@ -56,13 +62,7 @@ h2, h3 {
 
 p {
   line-height: 1.8;
-  margin-bottom: 20px;
-  text-align: justify;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-  -moz-hyphens: auto;
-  -o-hyphens: auto;
-  hyphens: auto; }
+  margin-bottom: 20px; }
   p.strap {
     color: #fff;
     font-size: 16px;
@@ -108,12 +108,7 @@ a {
   p {
     line-height: 1.8;
     margin-bottom: 20px;
-    text-align: justify;
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-    -moz-hyphens: auto;
-    -o-hyphens: auto;
-    hyphens: auto; }
+    text-align: justify; }
     p.strap {
       color: #fff;
       font-size: 20px;
